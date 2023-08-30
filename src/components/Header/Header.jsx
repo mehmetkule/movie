@@ -75,19 +75,19 @@ const Header = () => {
        
         <nav className="hidden md:flex justify-between flex-1">
           <div className="flex items-center lg:text-lg space-x-4 lg:space-x-8">
-            <a href="#" className="hover:text-gega-red transition duration-100">
+            <a href="#" className="hover:text-gega-red transition duration-500">
               Home
             </a>
-            <a href="#" className="hover:text-gega-red transition duration-100">
-              CELEBRITIES
+            <a href="#" className="hover:text-gega-red transition duration-500">
+              Celebrities
             </a>
-            <a href="#" className="hover:text-gega-red transition duration-100">
-              NEWS
+            <a href="#" className="hover:text-gega-red transition duration-500">
+              Blog
             </a>
-            <a href="#" className="hover:text-gega-red transition duration-100">
-              ABOUT
+            <a href="#" className="hover:text-gega-red transition duration-500">
+              News
             </a>
-            <a href="#" className="hover:text-gega-red transition duration-100">
+            <a href="#" className="hover:text-gega-red transition duration-500">
               Contact
             </a>
           </div>
