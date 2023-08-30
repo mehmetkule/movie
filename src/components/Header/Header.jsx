@@ -1,10 +1,23 @@
 import { AiOutlineSearch } from "react-icons/ai";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { MdLightMode ,MdDarkMode} from "react-icons/md";
  
 import { useState } from "react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDark, setIsDark] = useState(true);
+
+  const toggleDarkMode = () => {
+    setIsDark(!isDark);
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  };
+
   const mobileMenu = () => {
     return (
       <div className="fixed w-full h-full  bg-black md:hidden mt-128 z-50 flex items-center justify-center">
@@ -60,7 +73,7 @@ const Header = () => {
     );
   };
   return (
-    <header className="bg-black py-6 lg:py-12   text-gega-grey uppercase">
+    <header className="dark:bg-black bg-white text-black py-6 lg:py-12   dark:text-gega-grey uppercase">
       
       <div className="container flex justify-between items-center space-x-8 lg:space-x-16">
         <a href="#" className="text-4xl lg:text-6xl font-bold text-gega-grey text-transparent bg-gradient-to-r bg-clip-text from-gega-red to bg-gega-grey">
@@ -109,10 +122,11 @@ const Header = () => {
             </a>
             <a
               href="#"
-              className="bg-gega-red text-white py-1 px-3 whitespace-nowrap  hover:bg-white hover:text-gega-red transition duration-300"
+              className="dark:bg-gega-red dark:text-white py-1 px-3 whitespace-nowrap border border-gega-red  text-gega-red hover:bg-gega-red hover:text-gega-grey  dark:hover:bg-white dark:hover:text-gega-red transition duration-500"
             >
               Sign Up
             </a>
+            <button onClick={toggleDarkMode} className="text-gega-grey hover:text-gega-red transition duration-500"> {isDark ? < MdDarkMode className="text-2xl text-black" /> : <MdLightMode className="text-2xl" />}</button>
             </div>
           </div>
         </nav>
